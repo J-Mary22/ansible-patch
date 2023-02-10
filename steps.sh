@@ -17,7 +17,7 @@ ansible-inventory --graph
 ansible all -m ping
 
 ### Create a file ansible-patch.yml and paste the code below inside.
-touch ansible-patch.yml
+touch patch.yml
 
 ### validate the syntax of our playbook to avoid errors when running it.
 ansible-playbook patch.yml --syntax-check
