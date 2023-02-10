@@ -1,0 +1,27 @@
+---
+- name: Security patches
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Update apt package cache
+      when: "'Ubuntu' in ansible_facts.os_family"
+      apt:
+        update_cache: yes
+
+    - name: Upgrade security packages
+      when: "'Ubuntu' in ansible_facts.os_family"
+      apt:
+        upgrade: security
+
+    - name: Update yum package cache
+      when: "'RedHat' in ansible_facts.os_family"
+      yum:
+        update_cache: yes
+
+    - name: Upgrade security packages
+      when: "'RedHat' in ansible_facts.os_family"
+      yum:
+        name: "*"
+        state: latest
+        security: yes
