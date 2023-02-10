@@ -1,0 +1,5 @@
+/bin/crontab -l
+/bin/crontab -e
+
+##Then configure our cron job so that our playbook can run on the first of every month at 12am
+0 0 1 * *  /usr/bin/ansible-playbook /home/vagrant/patch-servers/patch.yml
