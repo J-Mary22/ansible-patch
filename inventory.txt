@@ -1,0 +1,5 @@
+#### list target servers in this file
+
+[servers]
+192.168.43.13 
+192.168.43.11
